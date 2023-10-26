@@ -61,7 +61,7 @@ fun BottomNavigationScreen(navController: NavController) {
 //                modifier = Modifier.fillMaxWidth().height(117.dp)
 //                    .background(color = Color.White, shape = RoundedCornerShape(15.dp)) // Set the desired background color here
                 backgroundColor = Color.White,
-                modifier = Modifier.height(70.dp)
+                modifier = Modifier.height(75.dp)
             ) {
                 items.forEachIndexed { index, item ->
                     val isSelected = index == selected
@@ -70,7 +70,7 @@ fun BottomNavigationScreen(navController: NavController) {
                             val icon = if (isSelected) item.selectedIcon else item.icon
                             Image(
                                 painter = painterResource(id = icon),
-                                contentDescription = null
+                                contentDescription = null, modifier = Modifier.size(25.dp)
                             )
                         },
                         selected = isSelected,
@@ -312,6 +312,7 @@ fun CoffeeListItem(
             color = if (isSelected) Color.White else Color.Black,
             fontSize = 14.sp,
             modifier = Modifier.padding(10.dp)
+        , fontFamily = soraSemiBold
         )
     }
 }
