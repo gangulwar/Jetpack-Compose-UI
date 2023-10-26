@@ -1,6 +1,8 @@
 package gangulwar.first
 
+import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.widget.ScrollView
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -54,7 +56,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.content.ContextCompat
 import androidx.navigation.compose.rememberNavController
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import gangulwar.first.ui.theme.FirstTheme
 
 val soraRegular = FontFamily(
@@ -70,6 +74,15 @@ val soraSemiBold = FontFamily(
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            window.statusBarColor = getColor(R.color.black)
+//        }
+
+//        val window = window
+//        val color = ContextCompat.getColor(this, R.color.black)
+//        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+//        window.statusBarColor = color
+
         setContent {
             FirstTheme {
                 // A surface container using the 'background' color from the theme
@@ -85,8 +98,14 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Main(){
+
     val navController = rememberNavController()
     BottomNavigationScreen(navController)
+
+//    val systemUiController = rememberSystemUiController()
+//    systemUiController.setSystemBarsColor(
+//        color = Color.White
+//    )
 }
 
 @Preview(
