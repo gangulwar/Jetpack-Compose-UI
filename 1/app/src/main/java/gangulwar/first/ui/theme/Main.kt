@@ -60,7 +60,8 @@ fun BottomNavigationScreen(navController: NavController) {
             BottomNavigation(
 //                modifier = Modifier.fillMaxWidth().height(117.dp)
 //                    .background(color = Color.White, shape = RoundedCornerShape(15.dp)) // Set the desired background color here
-                backgroundColor = Color.White
+                backgroundColor = Color.White,
+                modifier = Modifier.height(70.dp)
             ) {
                 items.forEachIndexed { index, item ->
                     val isSelected = index == selected
